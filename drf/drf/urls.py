@@ -18,12 +18,23 @@ from django.urls import path, re_path, include
 from app01 import views
 from rest_framework.routers import DefaultRouter
 
-router = DefaultRouter()
-router.register('books', views.BooksViewSet)
-router.register('Students',views.StudentViewSet)
+# router = DefaultRouter()
+# router.register('books', views.BooksViewSet)
+# router.register('Students',views.StudentViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'^stu/(?P<pk>\d+)/',views.StuView.as_view()),
+    re_path(r'^stus/$',views.StusView.as_view()),
+    re_path(r'^sstu/$',views.SstuView.as_view()),
+    re_path(r'^stu1/$',views.Stu1View.as_view()),
+    re_path(r'^stu1/(?P<pk>\d+)',views.Stu1DetailView.as_view()),
+    re_path(r'^stu2/',views.Stu2View.as_view()),
+    re_path(r'^stu3/(?P<pk>\d+)',views.Stu3View.as_view()),
+    re_path(r'stu4/$',views.Stu4View.as_view(actions={'get':'list','post':'create'})),
+    re_path(r'stu4/(?P<pk>\d+)',views.Stu4View.as_view(actions={'get':'retrieve','put':'update','delete':'destroy'})),
+    re_path(r'stu5/',views.Stu5Views.as_view(actions={'get':'get_all_stu'})),
 ]
 
-urlpatterns += router.urls
+# urlpatterns += router.urls

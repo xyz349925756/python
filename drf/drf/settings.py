@@ -41,13 +41,13 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
-REST_FRAMEWORK = {
-    # 使用标准的django.contrib.auth权限
-    # 允许未验证的用户只读访问
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+# REST_FRAMEWORK = {
+#     # 使用标准的django.contrib.auth权限
+#     # 允许未验证的用户只读访问
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
 
 
 MIDDLEWARE = [
@@ -139,9 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,'static')
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
