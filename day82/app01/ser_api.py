@@ -1,5 +1,9 @@
-#!/usr/bin/python3
-# -*-coding:utf-8-*-
-# Author: xyz34
-# Filer: ser_api.py
-# Time: 2022年12月2日
+from rest_framework import serializers
+
+from app01.models import UserInfo
+
+
+class UserinfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserInfo
+        fields = '__all__'
