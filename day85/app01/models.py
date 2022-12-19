@@ -42,6 +42,21 @@ class Book(BaseMode):
     class Meta:
         verbose_name_plural = '书'
 
+    @property
+    def publish_name(self):
+        return self.publish.name
+
+    # author 这里是多对多关系按照上面publish 肯定不行了
+    @property
+    def author_name(self):
+        # 先列出所有author
+        author_list = self.author.all()
+        # author_name = []
+        # for author in author_list:
+        #     author_name.append({'name':author.name,'gender':author.get_gender_display()})
+        # return author_name
+
+        return [{'name':author.name,'gender':author.get_gender_display()} for author in author_list]
 
 
 # 关于on_delete 的参数说明:
